@@ -17,8 +17,7 @@ class Solution {
         
         for(int h=0; h<s.length(); h++){
             char ch = s.charAt(h);
-            int index = (int)ch;
-            freq[index] = freq[index]+1;
+            freq[ch]++;
             
             int len = h - l + 1;
             int max_count = find_max(freq);
@@ -26,8 +25,7 @@ class Solution {
             
             while(diff > k){
                 char low_ch = s.charAt(l);
-                int low_index = (int)low_ch;
-                freq[low_index] = freq[low_index]-1;
+                freq[low_ch]--;
                 l++;
                 
                 len = h - l + 1;
